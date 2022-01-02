@@ -6,6 +6,7 @@ This is a photo editor project that allows you to use 7 different filters on any
   - Sepia
   - Hue Rotate
   - Blur
+
 To select an image of choice, go to line 23 of the App.css file and change image url under the "background-image" property
 
 # Getting Started with Create React App
