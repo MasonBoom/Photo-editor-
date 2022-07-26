@@ -1,9 +1,10 @@
 import React from 'react'
+import { SliderContainer, SliderObject } from './styles/Slider.styles'
 
 export default function Slider({ min, max, value, handleChange}) {
   return (
-    <div className="slider-container">
-      <input
+    <SliderContainer>
+      <SliderObject
         type="range"
         className="slider"
         min={min}
@@ -11,6 +12,6 @@ export default function Slider({ min, max, value, handleChange}) {
         value={value}
         onChange={handleChange}
       />
-    </div>
+    </SliderContainer>
   )
 }

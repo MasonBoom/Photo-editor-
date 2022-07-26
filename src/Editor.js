@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import './App.css';
 import Slider from './Slider'
-import SidebarItem from './SidebarItem'
+import SidebarItems from './SidebarItem'
+import { 
+Container, 
+MainImage,
+SideBar,
+} from './styles/Editor.styles';
 
 const defaultOptions = [
   {
@@ -101,12 +105,14 @@ function Editor() {
   console.log(getImageStyle())
 
   return (
-    <div className="container">
-      <div className="main-image" style={getImageStyle()} />
-      <div className="sidebar">
+    <Container>
+      <MainImage style={getImageStyle()} >
+        <img src="https://source.unsplash.com/EwKXn5CapA4" alt=""/>
+      </MainImage>
+      <SideBar>
         {options.map((option, index) => {
           return (
-            <SidebarItem
+            <SidebarItems
               key={index}
               name={option.name}
               active={index === selectedOptionIndex}
@@ -114,14 +120,14 @@ function Editor() {
             />
           )
         })}
-      </div>
+      </SideBar>
       <Slider
         min={selectedOption.range.min}
         max={selectedOption.range.max}
         value={selectedOption.value}
         handleChange={handleSliderChange}
       />
-    </div>
+    </Container>
   )
 }
 
